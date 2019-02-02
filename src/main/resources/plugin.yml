@@ -1,0 +1,14 @@
+name: ${project.name}
+main: sk.perri.kc.vote.Main
+version: ${project.version}
+author: Perri
+softdepend: [MVdWPlaceholderAPI]
+description: ${project.description}
+commands:
+  vote:
+    aliases: [hlasuj]
+  hlasy:
+    aliases: [votes]
+  voteparty:
+    aliases: [vp]
+  fakevote:

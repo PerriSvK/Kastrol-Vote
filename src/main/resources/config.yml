@@ -1,0 +1,47 @@
+only-placeholder: false
+update-time: 15 # seconds
+address: 'https://czech-craft.eu/vote?id=19204&user='
+voteparty: 150
+vote-cmd:
+  - cmd: 'crate give P Vote 1 %Player%'
+    perc: 1 # *100%
+  - cmd: 'cmi give %Player% 384 20'
+    perc: 0.9 # *100%
+  - cmd: 'cmi give %Player% 322 2'
+    perc: 0.75 # *100%
+  - cmd: 'cmi give %Player% 364 5'
+    perc: 0.75 # *100%
+  - cmd: 'cmi give %Player% 264 5'
+    perc: 0.75 # *100%
+voteparty-cmd:
+  - cmd: 'cmi give %Player% 57 1'
+    perc: 1.0 # *100%
+db:
+  host: localhost
+  user: root
+  pass: ''
+  db: minecraft
+
+msg:
+  voted: '&7Dakujeme za tvoj hlas! Aktualne mas %d hlasov!'
+  bc-vote: '&7Hrac &6%s &7zahlasoval! Do &6voteparty &7ostava &6%d &7hlasov!'
+  votes:
+    - "&6-----"
+    - "&6- &7Aktualne mas &6%d &7hlasov"
+    - "&6-----"
+  vote:
+    - "&6-----"
+    - "&6- %sprava%"
+    - "&6-----"
+  address: "&6&lOdkaz na hlasovanie"
+  address-hover: "&7&lOdkaz na stranku s hlasovanim"
+  already-voted: "&cV tuto session si uz hlasoval"
+  voted-hover: "&7&lHlasuj dalsiu session"
+  session: "&7(&6%d &7- &6%d)"
+  restart:
+    - "&6Uz mozes znova hlasovat!"
+  title: "vote"
+  subtitile: "Uz mozes znova hlasovat"
+  bc-voteparty: "&6Ziskal si odmenu z voteparty"
+  voteparty:
+    - "&eVe &cvoteparty &eje &c%vp% &ehlasu"
