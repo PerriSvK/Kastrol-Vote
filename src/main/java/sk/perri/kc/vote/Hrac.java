@@ -1,6 +1,5 @@
 package sk.perri.kc.vote;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
@@ -13,6 +12,7 @@ public class Hrac
     private Player player;
     private boolean voted = false;
     private int votes = -1;
+    private int offline = 0;
     private Timestamp last;
 
     public Hrac(Player player)
@@ -25,8 +25,13 @@ public class Hrac
         last = (Timestamp) tmp.get("last");
         if(last != null)
             voted = Main.self.timestamp.getTime().getTime() < last.getTime();
-        else if(player.isOp())
-            Main.self.getLogger().info("[Vote][D] last is null!");
+
+        offline = tmp.get("offline") != null ? (int) tmp.get("offline") : 0;
+    }
+
+    void setVoted(boolean voted)
+    {
+        this.voted = voted;
     }
 
     void addVote(Timestamp ts)
@@ -48,23 +53,31 @@ public class Hrac
         return voted;
     }
 
+    public int getOfflineVotes()
+    {
+        return offline;
+    }
+
     public int getVotes()
     {
         return votes;
     }
 
+    public void setOfflineVotes(int votes)
+    {
+        offline = votes;
+    }
+
     void resetVoted()
     {
         voted = false;
-        Bukkit.getServer().getScheduler().runTask(Main.self, ()->
-        {
+
             Main.self.getConfig().getStringList("msg.restart").forEach(l ->
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', l)));
             player.sendTitle(ChatColor.translateAlternateColorCodes('&',
                     Main.self.getConfig().getString("msg.title")),
                     ChatColor.translateAlternateColorCodes('&',
                             Main.self.getConfig().getString("msg.subtitle")), 20, 70, 10);
-            player.performCommand("vote");
-        });
+            player.performCommand("vote:vote");
     }
 }

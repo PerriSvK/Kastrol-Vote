@@ -32,10 +32,12 @@ msg:
   vote:
     - "&6-----"
     - "&6- %sprava%"
+    - "&6- %offline%"
     - "&6-----"
   address: "&6&lOdkaz na hlasovanie"
   address-hover: "&7&lOdkaz na stranku s hlasovanim"
   already-voted: "&cV tuto session si uz hlasoval"
+  offline-vote: "&7Mas %d offline hlasov! Na vyuzitie daj /offvote"
   voted-hover: "&7&lHlasuj dalsiu session"
   session: "&7(&6%d &7- &6%d)"
   restart:
@@ -43,5 +45,12 @@ msg:
   title: "vote"
   subtitile: "Uz mozes znova hlasovat"
   bc-voteparty: "&6Ziskal si odmenu z voteparty"
+  bc-voteparty-no: "&cPrebehla voteparty, ale ty si neziskal nic, lebo si nezahlasoval!"
   voteparty:
     - "&eVe &cvoteparty &eje &c%vp% &ehlasu"
+  offline-vote-block-title: "&c&lKLIKNI PRO ODMENU"
+  offline-vote-block-lore:
+    - "&7Odmena za offline hlasovani"
+    - ""
+    - "&7Jeste mas &a%d &7offline hlasu"
+  offline-vote-block-title-no: "&c&lNEMAS OFFLINE HLASY"

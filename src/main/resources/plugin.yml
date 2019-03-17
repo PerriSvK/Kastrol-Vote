@@ -2,7 +2,7 @@ name: ${project.name}
 main: sk.perri.kc.vote.Main
 version: ${project.version}
 author: Perri
-softdepend: [MVdWPlaceholderAPI]
+softdepend: [MVdWPlaceholderAPI, HolographicDisplays]
 description: ${project.description}
 commands:
   vote:
@@ -12,3 +12,6 @@ commands:
   voteparty:
     aliases: [vp]
   fakevote:
+  offlinevote:
+    aliases: [offvote,ofv]
+  voteinfo:
